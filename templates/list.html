@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Index</title>
+
+</head>
+<body>
+    {% for vid in object_list %}
+    <h1>{{ vid.title }}</h1>
+    <a href="{{ vid.video_file.url }}" download>Download</a><br>
+
+        <video width="320" height="240" controls>
+        <source src="{{ vid.video_file.url }}" type="video/mp4">
+
+Your browser does not support the video tag.
+</video>
+    {% endfor %}
+</body>
+</html>
